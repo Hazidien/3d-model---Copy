@@ -16,7 +16,7 @@ map.addControl(new maplibregl.ScaleControl(), 'bottom-left');
 
 
 // ==========================
-// POTENSI CONFIG
+// POTENSI CONFIG oi
 // ==========================
 const potensiConfig = [
     {
