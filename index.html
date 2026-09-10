@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Potensi Map</title>
+    <meta name="description" content="WebGIS potensi lokasi halte iCar ITS">
+    <title>Potensi Lokasi Halte iCar ITS</title>
 
-    <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
-    <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://tile.openstreetmap.org">
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="map"></div>
+    <div id="map" aria-label="Peta potensi lokasi halte iCar ITS"></div>
 
-    <div id="header">
-        <h1>PETA POTENSI HALTE iCAR ITS</h1>
+    <div id="loading" class="loading-overlay">
+        <div class="loading-card">
+            <div class="spinner"></div>
+            <span>Memuat peta...</span>
+        </div>
     </div>
 
-    <div id="ui-container">
-        <div id="legend"></div>
-        <div id="description-box">Select a category to see details.</div>
-    </div>
+    <header id="header">
+        <div class="eyebrow">WEBGIS • ITS</div>
+        <h1>Peta Potensi<br>Halte iCar ITS</h1>
+    </header>
+
+    <aside id="ui-container" aria-label="Kontrol peta">
+        <section class="panel">
+            <div class="panel-title">Klasifikasi Potensi</div>
+            <div id="legend"></div>
+        </section>
+
+        <section id="description-box" class="panel">
+            <div class="panel-title">Informasi</div>
+            <p id="description-text">Menampilkan seluruh kelas potensi.</p>
+        </section>
+    </aside>
+
+    <div id="map-status" class="map-status" role="status"></div>
 
     <script src="app.js"></script>
 </body>
